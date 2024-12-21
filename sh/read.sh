@@ -1,4 +1,8 @@
+cd "$(dirname "$0")"
 source ../secrets_env.sh
 
-url="https://045bw4qb8k.execute-api.us-east-1.amazonaws.com/fnSDR?action=read&pwd="$AWS_CURL_PWD"&s=1
+url=$AWS_API_URL"&action=read&s=1"
 echo $url
+
+resp=$(curl $url)
+echo $resp

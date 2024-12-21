@@ -1,1 +1,7 @@
-https://045bw4qb8k.execute-api.us-east-1.amazonaws.com/fnSDR?action=read&pwd=asdf&s=1
+source ./secrets_env.sh
+
+url=$AWS_API_URL"&action=patch&skid=20241221_073716_901&done=1"
+echo $url
+
+resp=$(curl $url)
+echo $resp
