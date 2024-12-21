@@ -217,7 +217,7 @@ void doProgress(int rotary_step) {
 
     if (bReadFromConsole == 1) {
       if (iReadFromConsole > 0) {
-        Serial.println("iReadFromConsole:");
+        Serial.println("iReadFromConsole");
         Serial.println(iReadFromConsole);
         cFEnable = '1';
         iReadFromConsole--;
