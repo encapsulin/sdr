@@ -11,7 +11,7 @@ while true; do
         sh ./patch.sh $skid
         sh ./tty.sh $seconds
     fi
-    sleep 5
+    sleep 1
 
 done
 

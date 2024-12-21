@@ -1,3 +1,4 @@
-#stty -F /dev/ttyUSB0 9600
-stty -F /dev/ttyUSB0 9600 cs8 -cstopb -parenb
-printf "5" > /dev/ttyUSB0
+#stty -F /dev/ttyUSB0 9600  crtscts cs8 -cstopb -parenb
+sec=$1
+stty -F /dev/ttyUSB0 9600 
+echo -n "$sec" > /dev/ttyUSB0
