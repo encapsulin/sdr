@@ -7,7 +7,7 @@
 //#define interruptPin 2 // 2 or 3
 const int pinK = 2;                     // Change to your interrupt pin (e.g., 2 or 3)
 volatile bool pinStateChanged = false;  // Flag to indicate interrupt was triggered
-
+#define inputFreq 12
 /////////////////
 int f_M = 1;
 int f_K = 1;
@@ -81,6 +81,8 @@ void setup() {
   print_freq();
 
   synt_setup();
+
+  pinMode(inputFreq, INPUT_PULLUP);
 }
 
 ////////////////
@@ -224,6 +226,9 @@ void doProgress(int rotary_step) {
       } else
         cFEnable = '0';
     }
+
+    if (digitalRead(inputFreq) == 0)
+      cFEnable = '1';
 
     if (rotary_step == 0) {
       synt_enable(cFEnable);
